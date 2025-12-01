@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.subtitle {
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.input-section, .results-section {
+    margin-bottom: 2rem;
+}
+
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.search-form input[type="text"] {
+    flex: 1;
+    padding: 0.5rem;
+}
+
+.search-form button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+    margin-top: 0.5rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 1rem;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.genres {
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.explanation {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px solid #ddd;
+    font-size: 0.8rem;
+}

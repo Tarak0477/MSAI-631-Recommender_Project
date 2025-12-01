@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="input-section">
+    <h2>Find Similar Movies</h2>
+    <p>Type a movie title you like and get personalized recommendations.</p>
+    <form method="post" class="search-form">
+        <label for="movie_title">Movie title:</label>
+        <input list="titles" type="text" id="movie_title" name="movie_title"
+               placeholder="e.g., Inception" value="{{ query_title }}">
+        <datalist id="titles">
+            {% for t in titles %}
+            <option value="{{ t }}"></option>
+            {% endfor %}
+        </datalist>
+        <button type="submit">Recommend</button>
+    </form>
+    {% if error_message %}
+    <p class="error">{{ error_message }}</p>
+    {% endif %}
+</section>
+
+{% if recommendations %}
+<section class="results-section">
+    <h2>Recommended for you</h2>
+    <div class="cards">
+        {% for rec in recommendations %}
+        <article class="card">
+            <h3>{{ rec.title }}</h3>
+            <p class="genres">{{ rec.genres }}</p>
+            <p class="description">{{ rec.description }}</p>
+            <p class="explanation">{{ rec.explanation }}</p>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+{% endblock %}
